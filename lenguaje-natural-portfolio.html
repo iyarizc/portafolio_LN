@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguaje Natural con Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Portada */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5c842 0%, #ffd93d 100%);
+            color: #333;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-info {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-course {
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            opacity: 0.85;
+        }
+
+        /* Catálogo */
+        .catalog {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .catalog-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5c842 0%, #ffd93d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-number {
+            display: inline-block;
+            background: #f5c842;
+            color: #333;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .catalog {
+                padding: 3rem 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Portada -->
+    <section class="hero">
+        <h1>Lenguaje Natural con Python</h1>
+        <p class="hero-info">Realizado por: Iyari Zavala Clemente</p>
+        <p class="hero-course">3A de Inteligencia Artificial</p>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="catalog">
+        <h2 class="catalog-title">Temas del Proyecto</h2>
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image">🔤</div>
+                <div class="card-content">
+                    <span class="card-number">01</span>
+                    <h3 class="card-title">Tokenizar</h3>
+                    <a href="Tokenizar.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-image">📏</div>
+                <div class="card-content">
+                    <span class="card-number">02</span>
+                    <h3 class="card-title">Longitud</h3>
+                    <a href="Longitud.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image">📊</div>
+                <div class="card-content">
+                    <span class="card-number">03</span>
+                    <h3 class="card-title">Frecuencia</h3>
+                    <a href="Frecuencia.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-image">🔁</div>
+                <div class="card-content">
+                    <span class="card-number">04</span>
+                    <h3 class="card-title">For</h3>
+                    <a href="For.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-image">😊</div>
+                <div class="card-content">
+                    <span class="card-number">05</span>
+                    <h3 class="card-title">Análisis de Sentimientos</h3>
+                    <a href="Analisis de sentimientos.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-image">🧠</div>
+                <div class="card-content">
+                    <span class="card-number">06</span>
+                    <h3 class="card-title">Pre-procesamiento</h3>
+                    <a href="preprocesamiento.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-image">🌍</div>
+                <div class="card-content">
+                    <span class="card-number">07</span>
+                    <h3 class="card-title">Traductor</h3>
+                    <a href="Traduccion.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="card">
+                <div class="card-image">🌐</div>
+                <div class="card-content">
+                    <span class="card-number">08</span>
+                    <h3 class="card-title">Practica Traductor</h3>
+                    <a href="practica traductor.html">link del archivo</a>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="card">
+                <div class="card-image">💻</div>
+                <div class="card-content">
+                    <span class="card-number">09</span>
+                    <h3 class="card-title">Procesamiento</h3>
+                    <a href="Procesamiento_texto.html">link del archivo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
