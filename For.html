@@ -193,33 +193,48 @@
             <div class="section">
                 <h3>📝 Código del Ejemplo</h3>
                 <div class="code-container">
-                    <pre>from longitud import palabra
+                    <pre>import nltk
+from nltk.tokenize import word_tokenize
+import random
 
-numeros = [1,2,3,4,5]
+#descargando recursos para el tokenizador
+nltk.download('punkt',quiet=True)
 
-for numero in numeros:
-    print(numero)
-#########################################
+#hola como estas
+respuestas={
+    "hola":["hola, como te ayudo!","hola, digame?","Buenas, en que lo ayudo?"],
+    "bye":["hasta luego","me dio gusto ayudarte","adios, espero haberte ayudado","hasta pronto"],
+    "nombre":["hola soy Chat0","soy Chat0, tu asistente virtual","soy un chatbot, me llamo Chat0"],
+    "gracias":["de nada","cuando gustes","estoy para ayudarte"],
+    "problema":["que problema tiene?","si, digame","ahorita lo tratamos de solucionar"],
+    "compra": ["ya solucione su problema :)"],
+    "devolucion":["disculpe, no hacemos devoluciones"],
+    "mover": ["con gusto, a que funcion?", "okey, me indica a que horario?"],
+    "siguiente": ["okey, ya quedo", "listo", "ya"],
 
-frutas = ["manzana", "banana", "cereza"]
-for fruta in frutas:
-    print("Me gusta la ", fruta)
+}
 
-#########################################
-for i in range(5):
-    print("Número: ",i)
+def buscar_respuestas(mensaje):
+    palabras=set(word_tokenize(mensaje.lower()))
+    #['hola','como','estas']
+    coincidencia=palabras & respuestas.keys()
 
-#########################################
-palabra = "Python"
+    if coincidencia: #true
+        palabra_encontrada=coincidencia.pop() #hola
+    return random.choice(respuestas[palabra_encontrada]) #respuestas[hola]
 
-for letra in palabra:
-    print(letra)
-#########################################
-texto_limpio = "hola mundo esto es python"
-tokens = texto_limpio.split()
+    return "No entendi tu mensaje, escribelo de nuevo."
 
-for token in tokens:
-    print("Token",token)</pre>
+print("ChatBot: Hola!,soy tu Chatbot para resolver tus problemas (escribe 'bye' para salir)")
+while True:
+    mensaje=input("Tu: ") #hola como estas
+
+    if mensaje.lower()=='bye':
+        print("Chatbot: adios")
+        break
+
+    respuesta=buscar_respuestas(mensaje)
+    print("chatbot:",respuesta)</pre>
                 </div>
             </div>
 
@@ -241,4 +256,5 @@ for token in tokens:
     </div>
 </body>
 </html>
+
 
